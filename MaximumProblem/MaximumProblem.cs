@@ -7,35 +7,28 @@ namespace MaximumProblem
     /// </summary>
     public class FindMaximum
     {
-        //Variables
-        private int number1;
-        private int number2;
-        private int number3;
-
-        /// <summary>
-        /// Default Constructor.
-        /// </summary>
-        public FindMaximum() { }
-
-        /// <summary>
-        /// Parameterised Constructor which Takes 3 Paramter to set fields.
-        /// </summary>
-        /// <param name="number1"></param>
-        /// <param name="number2"></param>
-        /// <param name="number3"></param>
-        public FindMaximum(int number1, int number2, int number3)
-        {
-            this.number1 = number1;
-            this.number2 = number2;
-            this.number3 = number3;
-
-        }
-
         /// <summary>
         /// Function to find the Maximum Ineteger Value.
         /// </summary>
         /// <returns></returns>
-        public int FindMaxInteger()
+        public int FindMaxInteger(int number1, int number2, int number3)
+        {
+            if (number1 > number2 && number1 > number3)
+                return number1;
+            else if (number2 > number1 && number2 > number3)
+                return number2;
+            else
+                return number3;
+        }
+
+        /// <summary>
+        /// Fnction to find Maximum floating point value.
+        /// </summary>
+        /// <param name="number1"></param>
+        /// <param name="number2"></param>
+        /// <param name="number3"></param>
+        /// <returns></returns>
+        public float FindMaxFloat(float number1, float number2, float number3)
         {
             if (number1 > number2 && number1 > number3)
                 return number1;
