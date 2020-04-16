@@ -57,7 +57,17 @@ namespace MaximumProblem
         public T FindMax()
         {
             T result=FindMaximum<T>.FindMax(param1, param2, param3);
+            FindMaximum<T>.PrintMax(result);
             return result;
+        }
+
+        /// <summary>
+        /// PrintMax Method which Takes result of Generic type and prints it on std out.
+        /// </summary>
+        /// <param name="result"></param>
+        public static void PrintMax(T result)
+        {
+            Console.WriteLine(result);
         }
     }
 }
