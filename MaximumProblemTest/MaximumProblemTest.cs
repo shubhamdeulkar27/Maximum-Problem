@@ -54,5 +54,17 @@ namespace MaximumProblemTest
             int result = findMaximum.FindMax();
             Assert.AreEqual(expected,result);
         }
+
+        /// <summary>
+        /// Test Case For Testing Multiple Parameter feature.
+        /// </summary>
+        [Test]
+        public void TestMultipleParameter()
+        {
+            string expected = "ZZZ";
+            FindMaximum<string> findMaximum = new FindMaximum<string>("ABC","SED","RRR","XYZ","ZZZ");
+            string result = findMaximum.FindMax();
+            Assert.AreEqual(expected, result);
+        }
     }
 }

@@ -8,10 +8,8 @@ namespace MaximumProblem
     public class FindMaximum<T> where T : IComparable
     {
         //Varibales.
-        private T param1;
-        private T param2;
-        private T param3;
-
+        private T[] parameterArray;
+        
         /// <summary>
         /// Default Constructor.
         /// </summary>
@@ -23,31 +21,22 @@ namespace MaximumProblem
         /// <param name="param1"></param>
         /// <param name="param2"></param>
         /// <param name="param3"></param>
-        public FindMaximum(T param1, T param2, T param3)
+        public FindMaximum(params T[] paramArray)
         {
-            this.param1 = param1;
-            this.param2 = param2;
-            this.param3 = param3;
+            this.parameterArray = paramArray;
         }
 
-
         /// <summary>
-        /// FindMax Function returns maximum value which is of Generic type.
+        /// FindMax function which takes multiple parameter and sort it and returns maximum value.
         /// </summary>
-        /// <param name="param1"></param>
-        /// <param name="param2"></param>
-        /// <param name="param3"></param>
+        /// <param name="paramAr"></param>
         /// <returns></returns>
-        public static T FindMax(T param1, T param2, T param3)
+        public static T FindMax(params T[] paramAr)
         {
-            if (param1.CompareTo(param2) > 0)
-            {
-                return (param1.CompareTo(param3) > 0) ? param1 : param3;
-            }
-            else
-            {
-                return (param2.CompareTo(param3) > 0) ? param2 : param3;
-            }
+            Array.Sort<T>(paramAr);
+            int arraySize = paramAr.Length;
+            T result = paramAr[arraySize - 1];
+            return result;
         }
 
         /// <summary>
@@ -56,7 +45,7 @@ namespace MaximumProblem
         /// <returns></returns>
         public T FindMax()
         {
-            T result=FindMaximum<T>.FindMax(param1, param2, param3);
+            T result=FindMaximum<T>.FindMax(parameterArray);
             FindMaximum<T>.PrintMax(result);
             return result;
         }
