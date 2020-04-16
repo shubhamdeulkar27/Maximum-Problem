@@ -37,5 +37,31 @@ namespace MaximumProblem
             else
                 return number3;
         }
+
+        /// <summary>
+        /// FindMaxString function returns maximum string from the input.
+        /// </summary>
+        /// <param name="string1"></param>
+        /// <param name="string2"></param>
+        /// <param name="string3"></param>
+        /// <returns></returns>
+        public string FindMaxString(string string1, string string2, string string3)
+        {
+            if (string.Compare(string1, string2) == 1 && string.Compare(string1, string3) == 1)
+            {
+                return string1;
+            }
+            else if (string.Compare(string2, string1) == 1 && string.Compare(string2, string3) == 1)
+            {
+                return string2;
+            }
+            else if (string.Compare(string3, string1) == 1 && string.Compare(string3, string2) == 1)
+            {
+                return string3;
+            }
+            else
+                return "0";
+        }
     }
 }
+ 
