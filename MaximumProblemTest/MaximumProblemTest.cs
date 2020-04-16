@@ -17,8 +17,7 @@ namespace MaximumProblemTest
         public void TestInteger()
         {
             int expected = 88;
-            FindMaximum<int> findMaximum = new FindMaximum<int>();
-            int result = findMaximum.FindMax(45, 45, 88);
+            int result = FindMaximum<int>.FindMax(45, 45, 88);
             Assert.AreEqual(expected,result);
         }
 
@@ -29,8 +28,7 @@ namespace MaximumProblemTest
         public void TestFloat()
         {
             float expected = 99.99f;
-            FindMaximum<float> findMaximum = new FindMaximum<float>();
-            float result = findMaximum.FindMax(24.1456f,1.225f,99.99f);
+            float result = FindMaximum<float>.FindMax(24.1456f,1.225f,99.99f);
             Assert.AreEqual(expected,result);
         }
 
@@ -41,8 +39,19 @@ namespace MaximumProblemTest
         public void TestString()
         {
             string expected = "PQR";
-            FindMaximum<string> findMaximum = new FindMaximum<string>();
-            string result = findMaximum.FindMax("ABC", "DEF", "PQR");
+            string result = FindMaximum<string>.FindMax("ABC", "DEF", "PQR");
+            Assert.AreEqual(expected,result);
+        }
+
+        /// <summary>
+        /// Test Case For Testing FindMax Function.
+        /// </summary>
+        [Test]
+        public void TestFindMaxFunction()
+        {
+            int expected = 99;
+            FindMaximum<int> findMaximum = new FindMaximum<int>(12,56,99);
+            int result = findMaximum.FindMax();
             Assert.AreEqual(expected,result);
         }
     }
